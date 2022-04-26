@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	export let name = "world";
+</script>
+
+<main>
+	<h1>Hello {name}!</h1>
+</main>
