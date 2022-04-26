@@ -1,7 +1,6 @@
 <script>
-	export let name = "world";
+	export let name = '';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-</main>
+<input bind:value={name} placeholder="enter something">
+<h1>{name}</h1>
