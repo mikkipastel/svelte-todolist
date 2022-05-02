@@ -1,6 +1,14 @@
 <script>
-	export let name = '';
+	export let input;
+	export let output = "";
+
+	function handleClick() {
+		output = input;
+	}
 </script>
 
-<input bind:value={name} placeholder="enter something">
-<h1>{name}</h1>
+<input bind:value={input} placeholder="enter something">
+<button on:click={handleClick}>
+	Add
+</button>
+<h1>{output}</h1>
