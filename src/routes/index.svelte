@@ -4,7 +4,11 @@
     let todoList = [];
 
     function addTodo() {
-        todoList = [...todoList, input];
+        let item = {
+            done: false,
+            text: input,
+        };
+        todoList = [...todoList, item];
         console.log(todoList);
         input = '';
     }
@@ -19,7 +23,13 @@
 
 {#each todoList as todo}
     <div class="flex flex-row">
-        <input class="place-self-center" type=checkbox>
-        <p class="mx-4">{todo}</p>
+        <input class="place-self-center" type=checkbox bind:checked={todo.done}>
+        <p class="mx-4">
+            {#if todo.done}
+                <strike>{todo.text}</strike>
+            {:else}
+                {todo.text}
+            {/if}
+        </p>
     </div>
 {/each}
