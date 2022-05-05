@@ -14,22 +14,24 @@
     }
 </script>
 
-<h1>TODO LIST</h1>
+<div class="mx-24 my-24">
+    <h1 class="text-2xl">TODO LIST</h1>
 
-<input bind:value={input} placeholder="enter something">
-<button on:click={addTodo}>
-    Add
-</button>
+    <input class="mt-8 border-solid border-2" bind:value={input} placeholder="enter something">
+    <button class="mx-4" on:click={addTodo}>
+        Add
+    </button>
 
-{#each todoList as todo}
-    <div class="flex flex-row">
-        <input class="place-self-center" type=checkbox bind:checked={todo.done}>
-        <p class="mx-4">
-            {#if todo.done}
-                <strike>{todo.text}</strike>
-            {:else}
-                {todo.text}
-            {/if}
-        </p>
-    </div>
-{/each}
+    {#each todoList as todo}
+        <div class="flex flex-row mt-2">
+            <input class="place-self-center rounded-lg" type=checkbox bind:checked={todo.done}>
+            <p class="mx-4">
+                {#if todo.done}
+                    <strike>{todo.text}</strike>
+                {:else}
+                    {todo.text}
+                {/if}
+            </p>
+        </div>
+    {/each}
+</div>
